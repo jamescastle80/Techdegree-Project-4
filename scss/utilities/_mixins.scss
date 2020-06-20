@@ -1,0 +1,24 @@
+
+@mixin flexed(
+    $disp: flex,
+    $dir: null,
+    $wrap: null,
+    $just: null) {
+        display: $disp;
+        flex-direction: $dir;
+        flex-wrap: $wrap;
+        justify-content: $just;
+    }
+
+@mixin mq($break) {
+    @if $break == 's' {
+        @media(max-width: $break-s) {
+            @content;
+        }
+    }
+    @else if $break == 'l' {
+        @media(min-width: $break-l) {
+            @content;
+        }
+    }
+}
